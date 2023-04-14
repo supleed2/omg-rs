@@ -1,0 +1,15 @@
+[package]
+name = "omg"
+version = "0.2.0"
+edition = "2021"
+description = "CLI app for interacting with the omg.lol API"
+homepage = "https://github.com/supleed2/omg-rs"
+license = "Apache-2.0"
+repository = "https://github.com/supleed2/omg-rs"
+# documentation = ""
+# keywords = []
+# categories = []
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
