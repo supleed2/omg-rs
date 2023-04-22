@@ -1,47 +1,16 @@
 use anyhow::Context;
-use clap::{Parser, Subcommand};
+use clap::Parser;
 use directories::ProjectDirs;
 use serde::{Deserialize, Serialize};
 use std::fs::read_to_string;
+
+mod cli;
+use cli::{Cli, Commands};
 
 #[derive(Default, Deserialize, Serialize)]
 struct Config {
     api_key: Option<String>,
     username: Option<String>,
-}
-
-#[derive(Parser)]
-struct Cli {
-    /// Set a custom username
-    #[clap(short, long)]
-    username: Option<String>,
-
-    #[clap(subcommand)]
-    command: Option<Commands>,
-
-    #[arg(short, long, action = clap::ArgAction::Count)]
-    verbose: u8,
-}
-
-#[derive(Subcommand)]
-enum Commands {
-    Auth {
-        api_key: String,
-    },
-    Weblog {
-        #[arg(short, long)]
-        yay: u8,
-
-        #[arg(short, long)]
-        nay: Option<u8>,
-    },
-    Status {
-        #[arg(long)]
-        message: String,
-
-        /// Does this explain it?
-        req: String,
-    },
 }
 
 fn main() -> anyhow::Result<()> {
