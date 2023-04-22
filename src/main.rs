@@ -39,7 +39,9 @@ fn main() -> anyhow::Result<()> {
         .expect("omg.lol username not provided as command line option, environment variable or in config file");
 
     println!("omg-rs, ready for @{name}");
-    println!("API key: {}", api_key);
+    if cli.verbose > 0 {
+        println!("API key: {}", api_key);
+    }
     Ok(())
 }
 
@@ -53,10 +55,7 @@ fn save_api_key(api_key: &str) -> std::io::Result<()> {
             .parent()
             .expect("Unable to get parent dir of config.toml"),
     );
-    let Config {
-        api_key: _,
-        name,
-    } = read_to_string(&config_path)
+    let Config { api_key: _, name } = read_to_string(&config_path)
         .ok()
         .and_then(|str| toml::from_str::<Config>(&str).ok())
         .unwrap_or_default();
