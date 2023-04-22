@@ -4,7 +4,7 @@ use clap::{Parser, Subcommand};
 pub struct Cli {
     /// Set a custom username
     #[clap(short, long)]
-    pub username: Option<String>,
+    pub name: Option<String>,
 
     #[clap(subcommand)]
     pub command: Option<Commands>,
