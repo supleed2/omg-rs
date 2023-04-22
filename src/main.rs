@@ -17,31 +17,7 @@ fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
     if let Some(Commands::Auth { api_key }) = cli.command {
-        let config_path = ProjectDirs::from("com", "supleed2", "omg")
-            .context("Unable to access app config directory (while saving API key).")?
-            .config_dir().join("config.toml");
-        let _ = std::fs::create_dir_all(&config_path.parent().expect("Unable to get parent dir of config.toml"));
-        let Config { api_key: _, username } = read_to_string(&config_path).ok()
-            .and_then(|str| toml::from_str::<Config>(&str).ok())
-            .unwrap_or_default();
-        let toml_str = toml::to_string_pretty(&Config {
-            api_key: Some(api_key),
-            username,
-        })
-        .expect("Unable to convert updated config to TOML (when trying to save API key).");
-        match std::fs::write(&config_path, toml_str) {
-            Ok(_) => {
-                println!("Saved API key to config file: {}", config_path.display());
-                std::process::exit(0);
-            }
-            Err(_) => {
-                eprintln!(
-                    "Failed to save API key to config file: {}",
-                    config_path.display()
-                );
-                std::process::exit(1);
-            }
-        };
+        save_api_key(&api_key)?;
     }
 
     let config = ProjectDirs::from("com", "supleed2", "omg")
@@ -62,6 +38,31 @@ fn main() -> anyhow::Result<()> {
     println!("omg-rs, ready for @{username}");
     println!("API key: {}", api_key);
     Ok(())
+}
+
+fn save_api_key(api_key: &str) -> anyhow::Result<()> {
+    let config_path = ProjectDirs::from("com", "supleed2", "omg")
+        .context("Unable to access app config directory (while saving API key).")?
+        .config_dir()
+        .join("config.toml");
+    let _ = std::fs::create_dir_all(
+        &config_path
+            .parent()
+            .expect("Unable to get parent dir of config.toml"),
+    );
+    let Config {
+        api_key: _,
+        username,
+    } = read_to_string(&config_path)
+        .ok()
+        .and_then(|str| toml::from_str::<Config>(&str).ok())
+        .unwrap_or_default();
+    let toml_str = toml::to_string_pretty(&Config {
+        api_key: Some(api_key.to_string()),
+        username,
+    })
+    .expect("Unable to convert updated config to TOML (when trying to save API key).");
+    std::fs::write(&config_path, toml_str).context("Failed to save API key to config file")
 }
 
 // Tutorial at: https://docs.rs/clap/latest/clap/_derive/_tutorial/index.html
