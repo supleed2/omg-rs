@@ -6,6 +6,7 @@ use std::fs::read_to_string;
 
 mod cli;
 use cli::{Cli, Commands};
+mod commands;
 
 #[derive(Default, Deserialize, Serialize)]
 struct Config {
@@ -51,7 +52,7 @@ fn save_api_key(api_key: &str) -> std::io::Result<()> {
         .config_dir()
         .join("config.toml");
     let _ = std::fs::create_dir_all(
-        &config_path
+        config_path
             .parent()
             .expect("Unable to get parent dir of config.toml"),
     );
