@@ -22,3 +22,14 @@ pub enum Purl {
         name: String,
     },
 }
+
+impl Purl {
+    pub fn process(&self) {
+        match self {
+            Purl::Create { name, url } => todo!(),
+            Purl::Get { name } => todo!(),
+            Purl::List => todo!(),
+            Purl::Delete { name } => todo!(),
+        }
+    }
+}

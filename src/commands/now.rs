@@ -15,3 +15,13 @@ pub enum Now {
         listed: bool,
     },
 }
+
+impl Now {
+    pub fn process(&self) {
+        match self {
+            Now::Get => todo!(),
+            Now::List => todo!(),
+            Now::Set { content, listed } => todo!(),
+        }
+    }
+}

@@ -10,3 +10,12 @@ pub enum Email {
         json_data: String,
     },
 }
+
+impl Email {
+    pub fn process(&self) {
+        match self {
+            Email::GetForwards => todo!(),
+            Email::SetForwards { json_data } => todo!(),
+        }
+    }
+}

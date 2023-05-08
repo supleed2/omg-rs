@@ -36,3 +36,19 @@ pub enum Weblog {
         content: String,
     },
 }
+
+impl Weblog {
+    pub fn process(&self, _address: &Option<String>) {
+        match self {
+            Weblog::Get { id: _ } => todo!(),
+            Weblog::Latest => todo!(),
+            Weblog::GetAll => todo!(),
+            Weblog::Create { content: _ } => todo!(),
+            Weblog::Delete { id: _ } => todo!(),
+            Weblog::GetConfig => todo!(),
+            Weblog::SetConfig { content: _ } => todo!(),
+            Weblog::GetTemplate => todo!(),
+            Weblog::SetTemplate { content: _ } => todo!(),
+        }
+    }
+}

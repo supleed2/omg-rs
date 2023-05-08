@@ -15,3 +15,13 @@ pub enum Theme {
         id: String,
     },
 }
+
+impl Theme {
+    pub fn process(&self) {
+        match self {
+            Theme::List => todo!(),
+            Theme::Info { id } => todo!(),
+            Theme::Preview { id } => todo!(),
+        }
+    }
+}

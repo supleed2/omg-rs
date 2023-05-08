@@ -28,3 +28,18 @@ pub enum Account {
         json_data: String,
     },
 }
+
+impl Account {
+    pub fn process(&self, _email: &str) {
+        match self {
+            Account::GetInfo => todo!(),
+            Account::GetAddresses => todo!(),
+            Account::GetName => todo!(),
+            Account::SetName { name: _ } => todo!(),
+            Account::GetSessions => todo!(),
+            Account::RemoveSession { session_id: _ } => todo!(),
+            Account::GetSettings => todo!(),
+            Account::SetSettings { json_data: _ } => todo!(),
+        }
+    }
+}

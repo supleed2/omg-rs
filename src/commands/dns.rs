@@ -20,3 +20,14 @@ pub enum Dns {
         id: String,
     },
 }
+
+impl Dns {
+    pub fn process(&self) {
+        match self {
+            Dns::GetRecords => todo!(),
+            Dns::AddRecord { json_data } => todo!(),
+            Dns::UpdateRecord { json_data } => todo!(),
+            Dns::DeleteRecord { id } => todo!(),
+        }
+    }
+}

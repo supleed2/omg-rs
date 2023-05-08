@@ -20,3 +20,13 @@ pub enum Web {
         // Eg: #[arg(value_parser = |arg: &str| -> Result<Duration, ParseIntError> {Ok(Duration::from_secs(arg.parse()?))})]
     },
 }
+
+impl Web {
+    pub fn process(&self) {
+        match self {
+            Web::Get => todo!(),
+            Web::Set { content: _, publish: _ } => todo!(),
+            Web::SetPFP { image: _ } => todo!(),
+        }
+    }
+}

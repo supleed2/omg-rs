@@ -45,3 +45,19 @@ pub enum Status {
     /// Get the most recent statuslog entries across omg.lol
     Timeline,
 }
+
+impl Status {
+    pub fn process(&self) {
+        match self {
+            Status::Get { id } => todo!(),
+            Status::GetAll => todo!(),
+            Status::Create { emoji, content, external_url } => todo!(),
+            Status::EasyCreate { status } => todo!(),
+            Status::Update { id, emoji, content } => todo!(),
+            Status::GetBio => todo!(),
+            Status::SetBio { content } => todo!(),
+            Status::GetAllHistorical => todo!(),
+            Status::Timeline => todo!(),
+        }
+    }
+}

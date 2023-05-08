@@ -24,3 +24,15 @@ pub enum Pastebin {
         name: String,
     },
 }
+
+impl Pastebin {
+    pub fn process(&self) {
+        match self {
+            Pastebin::Get { name } => todo!(),
+            Pastebin::GetAll => todo!(),
+            Pastebin::GetAllPublic => todo!(),
+            Pastebin::Set { name, content } => todo!(),
+            Pastebin::Delete { name } => todo!(),
+        }
+    }
+}

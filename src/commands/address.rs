@@ -11,3 +11,14 @@ pub enum Address {
     ///Get comprehensive information about an address
     GetInfo,
 }
+
+impl Address {
+    pub fn process(&self) {
+        match self {
+            Address::IsAvailable => todo!(),
+            Address::GetExpiry => todo!(),
+            Address::GetPublicInfo => todo!(),
+            Address::GetInfo => todo!(),
+        }
+    }
+}
