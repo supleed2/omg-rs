@@ -1,0 +1,3 @@
+[submodule "omg-api"]
+	path = omg-api
+	url = git@github.com:supleed2/omg-api.git

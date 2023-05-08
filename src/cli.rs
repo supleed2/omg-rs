@@ -1,5 +1,5 @@
-use crate::commands::Commands;
 use clap::Parser;
+use omg_api::Commands;
 
 #[derive(Parser)]
 pub struct Cli {

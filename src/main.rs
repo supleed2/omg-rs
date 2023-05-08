@@ -1,12 +1,12 @@
 use anyhow::Context;
 use clap::Parser;
 use directories::ProjectDirs;
+use omg_api::Commands;
 use serde::{Deserialize, Serialize};
 use std::fs::read_to_string;
 
 mod cli;
 use cli::Cli;
-mod commands;
 
 #[derive(Default, Deserialize, Serialize)]
 struct Config {
@@ -17,7 +17,7 @@ struct Config {
 fn main() -> anyhow::Result<()> {
     let cli = Cli::parse();
 
-    if let Some(commands::Commands::Auth { api_key }) = cli.command {
+    if let Some(Commands::Auth { api_key }) = cli.command {
         match save_api_key(&api_key) {
             Ok(_) => std::process::exit(0),
             Err(_) => std::process::exit(1),

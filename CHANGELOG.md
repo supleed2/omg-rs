@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Switch to external version of commands crate, [omg-api](https://github.com/supleed2/omg-api).
+
 ### Deprecated
 
 ### Removed
