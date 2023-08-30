@@ -9,12 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Changelog file (this file) and reference in the [readme](README.md).
+- Changelog file (this file) and reference in the [readme](README.md)
 - Automated release with pre-built binaries using GitHub Actions: [release.yaml](.github/workflows/release.yaml)
 
 ### Changed
 
-- Switch to external version of commands crate, [omg-api](https://github.com/supleed2/omg-api).
+- Switch to external version of commands crate, [omg-api](https://github.com/supleed2/omg-api)
+- Update [omg-api](https://github.com/supleed2/omg-api) to v0.2.0
 
 ### Deprecated
 

@@ -23,7 +23,7 @@ jobs:
   upload-assets:
     strategy:
       matrix:
-        os:
+        os: # TODO: Update to create binaries for both x86_64 and aarch64
           - ubuntu-latest
           - macos-latest
           - windows-latest
