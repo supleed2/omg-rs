@@ -9,6 +9,20 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+### Changed
+
+### Deprecated
+
+### Removed
+
+### Fixed
+
+### Security
+
+## [0.2.1] - 2023-08-30
+
+### Added
+
 - Changelog file (this file) and reference in the [readme](README.md)
 - Automated release with pre-built binaries using GitHub Actions: [release.yaml](.github/workflows/release.yaml)
 - Prami logo, taken from [here](https://sarajoy.dev/blog/short/2023-01-18-ascii-art-heart/) with permission
@@ -21,14 +35,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Switch to external version of commands crate, [omg-api](https://github.com/supleed2/omg-api)
 - Update [omg-api](https://github.com/supleed2/omg-api) to v0.2.0
 - Update config format and handling in `main.rs`
-
-### Deprecated
-
-### Removed
-
-### Fixed
-
-### Security
 
 ## [0.2.0] - 2023-04-14
 
@@ -52,5 +58,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Basic hello world project structure, testing crates.io
 
-[unreleased]: https://github.com/supleed2/omg-rs/compare/v0.2.0...HEAD
+[unreleased]: https://github.com/supleed2/omg-rs/compare/v0.2.1...HEAD
+[0.2.1]: https://github.com/supleed2/omg-rs/releases/tag/v0.2.1
 [0.2.0]: https://github.com/supleed2/omg-rs/releases/tag/v0.2.0

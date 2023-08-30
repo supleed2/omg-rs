@@ -1,6 +1,6 @@
 [package]
 name = "omg"
-version = "0.2.0"
+version = "0.2.1"
 edition = "2021"
 description = "CLI app for interacting with the omg.lol API"
 homepage = "https://github.com/supleed2/omg-rs"
