@@ -12,11 +12,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Changelog file (this file) and reference in the [readme](README.md)
 - Automated release with pre-built binaries using GitHub Actions: [release.yaml](.github/workflows/release.yaml)
 - Prami logo, taken from [here](https://sarajoy.dev/blog/short/2023-01-18-ascii-art-heart/) with permission
+- Prompt for API key so it isn't recorded in shell history
+- `switch` subcommand for selecting `default_name` and `api_key` to load
+- Handling of `AddressResponse` and printing to `stdout`
 
 ### Changed
 
 - Switch to external version of commands crate, [omg-api](https://github.com/supleed2/omg-api)
 - Update [omg-api](https://github.com/supleed2/omg-api) to v0.2.0
+- Update config format and handling in `main.rs`
 
 ### Deprecated
 
