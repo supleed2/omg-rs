@@ -11,6 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Changelog file (this file) and reference in the [readme](README.md)
 - Automated release with pre-built binaries using GitHub Actions: [release.yaml](.github/workflows/release.yaml)
+- Prami logo, taken from [here](https://sarajoy.dev/blog/short/2023-01-18-ascii-art-heart/) with permission
 
 ### Changed
 

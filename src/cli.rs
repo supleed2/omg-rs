@@ -2,13 +2,14 @@ use clap::Parser;
 use omg_api::Commands;
 
 #[derive(Parser)]
+#[command(name = "omg-rs", version,
+    long_about = concat!("\x1b[38;5;205m", include_str!("prami_sjw.txt"),
+    "\n\nA cli client for omg.lol, written in Rust 🦀\x1b[0m"))]
+/// A cli client for omg.lol, written in Rust 🦀
 pub struct Cli {
-    /// Set which omg.lol username to use, overrides config and environment variable (OMGLOL_USERNAME)
-    #[clap(short, long)]
-    pub name: Option<String>,
     /// Categories of commands to interact with the omg.lol API
     #[clap(subcommand)]
-    pub command: Option<Commands>,
+    pub command: Commands,
     /// Print debug information, repeat for higher levels of debug info (max 1)
     #[arg(short, long, action = clap::ArgAction::Count)]
     pub verbose: u8,
