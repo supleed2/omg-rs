@@ -23,3 +23,5 @@ toml = "0.7.6"
 
 [patch.crates-io]
 omg-api = { path = "omg-api" }
+
+# Document features? https://github.com/slint-ui/document-features

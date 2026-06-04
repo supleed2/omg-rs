@@ -59,30 +59,12 @@ fn main() -> anyhow::Result<()> {
     }
 
     match resp {
-        CommandResponse::Todo(_) => println!(
-            "This command has not been implemented yet, please look forward to future releases!"
-        ),
+        CommandResponse::Todo(_) => unreachable!(),
         CommandResponse::Address(r) => match r {
-            AddressResponse::IsAvailable(IsAvailable { response: r }) => {
-                println!(
-                    "Address \"{}\" is {}available",
-                    r.address,
-                    if r.available { "" } else { "NOT " }
-                )
-            }
-            AddressResponse::GetExpiry(GetExpiry { response: r }) => println!("{}", r.message),
-            AddressResponse::GetPublicInfo(GetPublicInfo { response: r }) => {
-                println!(
-                    "Address \"{}\":\n{}\nExpired: {}\nVerified: {}",
-                    r.address, r.message, r.expiration.expired, r.verification.verified
-                )
-            }
-            AddressResponse::GetInfo(GetInfo { response: r }) => {
-                println!(
-                    "Address \"{}\" (owned by \"{}\"):\n{}\nExpired: {}\nVerified: {}",
-                    r.address, r.owner, r.message, r.expiration.expired, r.verification.verified
-                )
-            }
+            AddressResponse::IsAvailable(IsAvailable { response: r }) => println!("{:#?}", r),
+            AddressResponse::GetExpiry(GetExpiry { response: r }) => println!("{:#?}", r),
+            AddressResponse::GetPublicInfo(GetPublicInfo { response: r }) => println!("{:#?}", r),
+            AddressResponse::GetInfo(GetInfo { response: r }) => println!("{:#?}", r),
         },
     }
 
@@ -161,3 +143,4 @@ fn save_api_key(api_key: &str, name: &str) -> std::io::Result<()> {
 // Clap arg relations: https://docs.rs/clap/latest/clap/_derive/_tutorial/index.html#argument-relations
 // Clap derive docs: https://docs.rs/clap/latest/clap/_derive/index.html
 // Thiserror docs: https://docs.rs/thiserror/latest/thiserror/index.html
+// Useful?: https://rust-cli.github.io/book/index.html
